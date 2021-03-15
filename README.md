@@ -18,7 +18,7 @@ The main motivation for this app was my personal interest in inline skating and 
 - As a user, I want to be able to rate other user&#39;s locations.
 - As a user, I want to be able to share a location on other apps.
 -	As a user, I want to be able to use google maps to navigate to the location.
-- As a user, I want to be able to sort locations by type of sport and/or location type.
+- As a user, I want to be able to sort locations by type of sport and/or location type, user.
 
 **Could have:**
 
@@ -26,6 +26,7 @@ The main motivation for this app was my personal interest in inline skating and 
 - As a user, I want to be able to set my profile picture, username, and other info.
 - As a user, I want to be able to see my profile statistics, such as average location rating.
 - As a user, I want to receive notification when a new location has been added in my local area.
+- As a user, I want to be able to comment on other user’s shared locations.
 
 **Won&#39;t have:**
 
