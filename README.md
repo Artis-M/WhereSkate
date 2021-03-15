@@ -4,8 +4,10 @@ The main purpose of the app is to share location for skating. These locations ca
 
 The main motivation for this app was my personal interest in inline skating and that I used to share cool places to skate with my friends, that way we were able to find interesting locations that not a lot of people knew about. Therefore, having an app for that would help people find more locations to skate at.
 
-**REQUIREMENTS:**
-
+<details>
+<summary>**REQUIREMENTS:**</summary>
+<br>
+  
 **Must Have:**
 
 - As a user, I want to be able to add skating locations on a map.
@@ -32,3 +34,4 @@ The main motivation for this app was my personal interest in inline skating and 
 
 - As a user, I want to be able to create routes.
 - As a user, I want to be able to import locations from other apps.
+</details>
