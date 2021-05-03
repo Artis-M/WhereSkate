@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WhereSkate">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD0kVOCkUsDYJ3EI2iyrp89vbrYI-u2KG4"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
