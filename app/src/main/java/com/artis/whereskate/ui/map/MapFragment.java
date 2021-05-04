@@ -1,27 +1,23 @@
 package com.artis.whereskate.ui.map;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
-import com.artis.whereskate.MapViewModel;
 import com.artis.whereskate.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 
 public class MapFragment extends Fragment {
 
@@ -53,6 +49,7 @@ public class MapFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
                                 newMarker.setDraggable(false);
+                                mapViewModel.saveMarker(newMarker, view);
                                 fabSave.setVisibility(View.GONE);
                             }
                         });

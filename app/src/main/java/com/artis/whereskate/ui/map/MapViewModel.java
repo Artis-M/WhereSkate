@@ -1,25 +1,27 @@
-package com.artis.whereskate;
+package com.artis.whereskate.ui.map;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModel;
 
-import android.os.Bundle;
+import androidx.navigation.Navigation;
 
-import com.artis.whereskate.ui.home.HomeViewModel;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import android.view.View;
+
+import com.artis.whereskate.R;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapViewModel extends ViewModel{
+import com.google.android.gms.maps.model.Marker;
+
+
+public class MapViewModel extends ViewModel {
 
     private GoogleMap mMap;
 
-    public MapViewModel(){
+    public MapViewModel() {
 
     }
 
+    public void saveMarker(Marker marker, View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_map_to_nav_markerMenu);
+    }
 }

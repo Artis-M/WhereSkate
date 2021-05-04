@@ -9,11 +9,29 @@
         android:id="@+id/nav_map"
         android:name="com.artis.whereskate.ui.map.MapFragment"
         android:label="@string/menu_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_nav_map_to_nav_markerMenu"
+            app:destination="@id/nav_markerMenu" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.artis.whereskate.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_map"
+            app:destination="@id/nav_map" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_markerMenu"
+        android:name="com.artis.whereskate.ui.markerMenu.MarkerMenuFragment"
+        android:label="@string/menu_markerMenu"
+        tools:layout="@layout/fragment_marker_menu" >
+        <action
+            android:id="@+id/action_nav_markerMenu_to_nav_map"
+            app:destination="@id/nav_map" />
+    </fragment>
 </navigation>
