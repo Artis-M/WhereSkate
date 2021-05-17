@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "644244859461",
+    "project_id": "whereskate",
+    "storage_bucket": "whereskate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644244859461:android:5bdfb1885d5c0908e1912c",
+        "android_client_info": {
+          "package_name": "com.artis.whereskate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644244859461-6ad7bmrdsjk1p5s46ve8ccmh1v9gdcum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqp2CKVqwlOzofygJXHXBMzszCiERaj54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644244859461-6ad7bmrdsjk1p5s46ve8ccmh1v9gdcum.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
