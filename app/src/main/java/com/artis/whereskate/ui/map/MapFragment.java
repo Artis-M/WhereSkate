@@ -168,7 +168,7 @@ public class MapFragment extends Fragment {
                                     .draggable(false)
                                     .title(markerObjects.get(i).name)
                                     .snippet(markerObjects.get(i).description)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_marker))
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_marker_small))
                             );
                             marker.setTag(markerObjects.get(i));
                         }
