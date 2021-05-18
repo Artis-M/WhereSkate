@@ -15,27 +15,42 @@
         tools:context="ui.map.MapFragment"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addMarkerFab"
+    <Button
+        android:id="@+id/saveMakerButton"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="76dp"
+        android:clickable="true"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addMarkerButton"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/addMarkerButton"
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:clickable="true"
+        android:text="Add New"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.883" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/saveMakerFab"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="28dp"
-        android:clickable="true"
+    <Button
+        android:id="@+id/viewMoreInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View More Info"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addMarkerFab"
+        app:layout_constraintEnd_toStartOf="@+id/saveMakerButton"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.869"
         tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

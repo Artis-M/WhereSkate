@@ -1,5 +1,6 @@
 package com.artis.whereskate;
 
+import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import java.security.Permission;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private ImageView profilePic;
     private TextView welcomeText;
-
     MarkerMenuViewModel markerMenuViewModel;
     MapViewModel mapViewModel;
     ArrayList<MarkerObject> markerObjects = new ArrayList<>();
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     //Literally used the nav drawer template, no need to reinvent the wheel ¯\_(ツ)_/¯
     @Override
     protected void onCreate(Bundle savedInstanceState){
+
         appRepository = new AppRepository();
         markerMenuViewModel = new ViewModelProvider(this).get(MarkerMenuViewModel.class);
         mapViewModel = new ViewModelProvider(this).get(MapViewModel.class);

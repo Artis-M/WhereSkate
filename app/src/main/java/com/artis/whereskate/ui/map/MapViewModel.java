@@ -16,6 +16,7 @@ import com.artis.whereskate.model.MarkerObject;
 import com.google.android.gms.maps.GoogleMap;
 
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,15 +50,23 @@ public class MapViewModel extends ViewModel {
         return markersForView;
     }
 
-    public void updateMarkers(){
+    public void openMarkerDetails(MarkerObject markerObject, View view){
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("marker", markerObject);
+        Navigation.findNavController(view).navigate(R.id.action_nav_map_to_nav_markerInfo, bundle);
+    }
+
+    public void updateMarkers(DataSnapshot snapshot){
+        markerObjects.clear();
+        for (DataSnapshot data : snapshot.getChildren()){
+            for (DataSnapshot parent : snapshot.getChildren()) {
+                String userid = parent.getKey();
+                DataSnapshot dataSnapshot = snapshot.child(userid);
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    markerObjects.add(child.getValue(MarkerObject.class));
+                }
+            }
+        }
         markersForView.postValue(markerObjects);
-        ArrayList<MarkerObject> markerObjects1 = new ArrayList<>();
-        MarkerObject markerObject = new MarkerObject();
-        markerObject.userId = "asdasdasdas";
-        markerObject.lang = 29.922210112711525;
-        markerObject.lat = 55.74162900205656;
-        markerObject.name = "placeholder";
-        markerObjects1.add(markerObject);
-        markersForView.setValue(markerObjects1);
     }
 }

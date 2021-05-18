@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_map_to_nav_markerMenu"
             app:destination="@id/nav_markerMenu" />
+        <action
+            android:id="@+id/action_nav_map_to_nav_markerInfo"
+            app:destination="@id/nav_markerInfo" />
     </fragment>
 
     <fragment
@@ -32,6 +35,15 @@
         tools:layout="@layout/fragment_marker_menu" >
         <action
             android:id="@+id/action_nav_markerMenu_to_nav_map"
+            app:destination="@id/nav_map" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_markerInfo"
+        android:name="com.artis.whereskate.ui.markerInfo.MarkerInfoFragment"
+        tools:layout="@layout/fragment_marker_info" >
+        <action
+            android:id="@+id/action_nav_markerInfo_to_nav_map"
             app:destination="@id/nav_map" />
     </fragment>
 </navigation>

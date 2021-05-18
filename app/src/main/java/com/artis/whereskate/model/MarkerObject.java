@@ -9,6 +9,9 @@ public class MarkerObject implements Serializable {
         public String name;
         public String description;
         public String userId;
+        public String markerId;
+        public String imageURL;
+        public String userName;
 
 //    public MarkerObject(double lat, double lang, String name, String description) {
 //        this.lat = lat;
