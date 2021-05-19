@@ -44,6 +44,7 @@ public class MapViewModel extends ViewModel {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("marker", markerObject);
+        bundle.putBoolean("isNew", true);
         Navigation.findNavController(view).navigate(R.id.action_nav_map_to_nav_markerMenu, bundle);
     }
     public MutableLiveData<ArrayList<MarkerObject>> getMarkersForView(){

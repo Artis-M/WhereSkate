@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Literally used the nav drawer template, no need to reinvent the wheel ¯\_(ツ)_/¯
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
 
         appRepository = new AppRepository();
         markerMenuViewModel = new ViewModelProvider(this).get(MarkerMenuViewModel.class);
@@ -65,18 +65,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_map)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -104,25 +102,6 @@ public class MainActivity extends AppCompatActivity {
             welcomeText.setText("Welcome back " + account.getDisplayName());
         }
 
-
-//        appRepository.getDatabaseReference().addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                int i = 0;
-//                for (DataSnapshot child : snapshot.getChildren()) {
-//                    markerObjects.add(child.getValue(MarkerObject.class));
-//                    i++;
-//                }
-//                mapViewModel.updateMarkers(markerObjects);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                mapViewModel.updateMarkers(markerObjects);
-//            }
-//        });
-
-
     }
 
     @Override
@@ -132,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void logOut(View view){
+    public void logOut(View view) {
         FirebaseAuth.getInstance().signOut();
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             Intent intent = new Intent(this, LoginActivity.class);

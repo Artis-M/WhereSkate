@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         if(FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(this, MainActivity.class));
             this.finish();

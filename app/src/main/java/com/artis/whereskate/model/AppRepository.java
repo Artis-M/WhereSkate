@@ -27,26 +27,6 @@ public class AppRepository {
         databaseReference.child(markerObject.userId).child(key).setValue(markerObject);
     }
 
-    public ArrayList<MarkerObject> getMarkersFromDB(){
-        ArrayList<MarkerObject> markerObjects = new ArrayList<>();
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int i = 0;
-                Log.println(Log.ASSERT, "HElp me", "Getting stuff from db");
-                for (DataSnapshot child : snapshot.getChildren()) {
-                    markerObjects.add(child.getValue(MarkerObject.class));
-                    i++;
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        return markerObjects;
-    }
-
     public DatabaseReference getDatabaseReference() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://whereskate-default-rtdb.europe-west1.firebasedatabase.app/").getReference("markers");
         return databaseReference;
@@ -58,5 +38,8 @@ public class AppRepository {
 
     public void deleteMarker(String user, String marker){
         databaseReference.child(user).child(marker).removeValue();
+    }
+    public void editMarker(MarkerObject markerObject){
+        databaseReference.child(markerObject.userId).child(markerObject.markerId).setValue(markerObject);
     }
 }

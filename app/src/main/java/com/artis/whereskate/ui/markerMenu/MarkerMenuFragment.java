@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -27,6 +28,11 @@ import com.artis.whereskate.R;
 import com.artis.whereskate.model.MarkerObject;
 import com.bumptech.glide.Glide;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 public class MarkerMenuFragment extends Fragment {
 
@@ -49,10 +55,17 @@ public class MarkerMenuFragment extends Fragment {
         Bundle args = getArguments();
         MarkerObject markerObject = (MarkerObject) args.getSerializable("marker");
         markerMenuViewModel.loadMarkerBuffer(markerObject);
+        boolean isNew = args.getBoolean("isNew");
+        boolean isFromHome = args.getBoolean("isFromHome");
+        if(!isNew){
+            Glide.with(rootView).load(markerObject.imageURL).into(previewImage);
+            nameText.setText(markerObject.name);
+            descriptionText.setText(markerObject.description);
+        }
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                markerMenuViewModel.saveMarker(nameText.getText().toString(), descriptionText.getText().toString(), root, imageCache);
+                markerMenuViewModel.saveMarker(nameText.getText().toString(), descriptionText.getText().toString(), root, imageCache, isNew, isFromHome);
             }
         });
         addImageButton.setOnClickListener(new View.OnClickListener() {

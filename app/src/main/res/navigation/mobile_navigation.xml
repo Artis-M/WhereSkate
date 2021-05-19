@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_map"
             app:destination="@id/nav_map" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_markerInfo"
+            app:destination="@id/nav_markerInfo" />
     </fragment>
 
     <fragment
@@ -36,6 +39,12 @@
         <action
             android:id="@+id/action_nav_markerMenu_to_nav_map"
             app:destination="@id/nav_map" />
+        <action
+            android:id="@+id/action_nav_markerMenu_to_nav_markerInfo"
+            app:destination="@id/nav_markerInfo" />
+        <action
+            android:id="@+id/action_nav_markerMenu_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 
     <fragment
@@ -45,5 +54,11 @@
         <action
             android:id="@+id/action_nav_markerInfo_to_nav_map"
             app:destination="@id/nav_map" />
+        <action
+            android:id="@+id/action_nav_markerInfo_to_nav_markerMenu"
+            app:destination="@id/nav_markerMenu" />
+        <action
+            android:id="@+id/action_nav_markerInfo_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

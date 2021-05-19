@@ -46,7 +46,7 @@ public class MarkerMenuViewModel extends ViewModel {
 
     }
 
-    public void saveMarker(String name, String description, View view, @Nullable Bitmap image) {
+    public void saveMarker(String name, String description, View view, @Nullable Bitmap image, boolean isNew, boolean isFromHome) {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(view.getContext());
         markerObject.userId = account.getId();
         markerObject.description = description;
@@ -57,7 +57,11 @@ public class MarkerMenuViewModel extends ViewModel {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] data = baos.toByteArray();
-            storageReference.child(account.getId()).putBytes(data);
+
+        //    storageReference.child(account.getId()).putBytes(data);
+
+           storageReference.child(account.getId()).child(markerObject.lat + markerObject.lang + "").putBytes(data);
+
             UploadTask uploadTask = storageReference.putBytes(data);
             Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
@@ -75,7 +79,13 @@ public class MarkerMenuViewModel extends ViewModel {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
                         markerObject.imageURL = downloadUri.toString();
-                        appRepository.saveMarker(markerObject);
+                        if(isNew){
+                            appRepository.saveMarker(markerObject);
+                        }
+                      else
+                          {
+                            appRepository.editMarker(markerObject);
+                        }
                     } else {
                     }
                 }
@@ -83,10 +93,20 @@ public class MarkerMenuViewModel extends ViewModel {
         }
         else
             {
-                markerObject.imageURL = "https://images2.minutemediacdn.com/image/upload/c_crop,h_1600,w_2378,x_11,y_0/v1579707709/shape/mentalfloss/56093-gettyimages-1171368832.jpg?itok=x5t6Tht2";
-                appRepository.saveMarker(markerObject);
-        }
+                if(isNew){
+                    markerObject.imageURL = "https://images2.minutemediacdn.com/image/upload/c_crop,h_1600,w_2378,x_11,y_0/v1579707709/shape/mentalfloss/56093-gettyimages-1171368832.jpg?itok=x5t6Tht2";
+                    appRepository.saveMarker(markerObject);
+                }
+                else{
+                    appRepository.editMarker(markerObject);
+                }
 
-        Navigation.findNavController(view).navigate(R.id.action_nav_markerMenu_to_nav_map);
+        }
+if(isFromHome){
+    Navigation.findNavController(view).navigate(R.id.action_nav_markerMenu_to_nav_home);
+}
+else{
+    Navigation.findNavController(view).navigate(R.id.action_nav_markerMenu_to_nav_map);
+}
     }
 }

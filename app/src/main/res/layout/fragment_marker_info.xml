@@ -47,28 +47,52 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-            android:id="@+id/markerInfoDescription"
-            android:layout_width="367dp"
-            android:layout_height="358dp"
-            android:layout_marginTop="24dp"
-            android:text="Marker Description"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/markerInfoImage" />
+        android:id="@+id/markerInfoDescription"
+        android:layout_width="367dp"
+        android:layout_height="358dp"
+        android:layout_marginTop="24dp"
+        android:text="Marker Description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/markerInfoImage" />
 
     <Button
         android:id="@+id/markerInfoDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
         android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/markerInfoImage"
+        app:layout_constraintBottom_toTopOf="@+id/markerInfoDescription"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toEndOf="@+id/markerInfoUserName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toEndOf="@+id/markerInfoEdit"
+        app:layout_constraintTop_toBottomOf="@+id/markerInfoImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/markerInfoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/markerInfoDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/markerInfoImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/showOnMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Show on map"
+        app:layout_constraintBottom_toTopOf="@+id/markerInfoDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/markerInfoImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

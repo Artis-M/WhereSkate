@@ -20,4 +20,7 @@ public class MarkerObject implements Serializable {
 //        this.description = description;
 //    }
 
+        public String getUserId(){
+                return userId;
+        }
 }
