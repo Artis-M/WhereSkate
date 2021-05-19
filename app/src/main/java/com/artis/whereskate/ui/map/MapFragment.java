@@ -145,6 +145,7 @@ public class MapFragment extends Fragment {
 
                     }
                 });
+
                 mapViewModel.getMarkersForView().observe(getViewLifecycleOwner(), new Observer<ArrayList<MarkerObject>>() {
                     @Override
                     public void onChanged(ArrayList<MarkerObject> markerObjects) {

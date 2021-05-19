@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.Navigation;
 
@@ -31,7 +32,7 @@ public class MarkerMenuViewModel extends ViewModel {
     private String markerDescriptionString;
     private String markerNameString;
     private String photoUrl;
-
+    private MutableLiveData<String> warningText = new MutableLiveData<>();
     private MarkerObject markerObject;
 
     public MarkerMenuViewModel() {
@@ -42,11 +43,17 @@ public class MarkerMenuViewModel extends ViewModel {
         this.markerObject = markerObject;
     }
 
-    public void savePicture() {
-
+    public MutableLiveData<String> getWarningText(){
+            return warningText;
     }
 
     public void saveMarker(String name, String description, View view, @Nullable Bitmap image, boolean isNew, boolean isFromHome) {
+
+        if(name.trim().length() == 0 || description.trim().length() == 0){
+            warningText.setValue("Please enter a name and a description.");
+            return;
+        }
+
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(view.getContext());
         markerObject.userId = account.getId();
         markerObject.description = description;
@@ -58,7 +65,6 @@ public class MarkerMenuViewModel extends ViewModel {
             image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] data = baos.toByteArray();
 
-        //    storageReference.child(account.getId()).putBytes(data);
 
            storageReference.child(account.getId()).child(markerObject.lat + markerObject.lang + "").putBytes(data);
 

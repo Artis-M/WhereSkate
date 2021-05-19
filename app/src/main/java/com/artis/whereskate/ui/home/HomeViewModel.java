@@ -38,15 +38,19 @@ public class HomeViewModel extends ViewModel {
         myMarkersForView.postValue(markerObjects);
 
         markerObjectsAll.clear();
-        for (DataSnapshot data : snapshot.getChildren()){
+
             for (DataSnapshot parent : snapshot.getChildren()) {
+
                 String userid = parent.getKey();
+
                 DataSnapshot dataSnapshotAll = snapshot.child(userid);
+
                 for (DataSnapshot child : dataSnapshotAll.getChildren()) {
+
                     markerObjectsAll.add(child.getValue(MarkerObject.class));
                 }
-            }
         }
+
         allMarkersForView.postValue(markerObjectsAll);
 
     }

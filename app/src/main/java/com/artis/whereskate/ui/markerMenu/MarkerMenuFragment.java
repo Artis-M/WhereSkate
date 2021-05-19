@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -41,6 +43,7 @@ public class MarkerMenuFragment extends Fragment {
     private ImageView previewImage;
     private Bitmap imageCache;
     private View rootView;
+    private TextView errorLabel;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         markerMenuViewModel =
@@ -51,10 +54,20 @@ public class MarkerMenuFragment extends Fragment {
         EditText nameText = root.findViewById(R.id.markerNameText);
         Button saveButton = root.findViewById(R.id.saveMarkerButton);
         Button addImageButton = root.findViewById(R.id.addPhotoButton);
+        errorLabel = root.findViewById(R.id.missingNameLabel);
+
         previewImage = root.findViewById(R.id.photoPreview);
         Bundle args = getArguments();
         MarkerObject markerObject = (MarkerObject) args.getSerializable("marker");
         markerMenuViewModel.loadMarkerBuffer(markerObject);
+
+        markerMenuViewModel.getWarningText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                errorLabel.setText(s);
+            }
+        });
+
         boolean isNew = args.getBoolean("isNew");
         boolean isFromHome = args.getBoolean("isFromHome");
         if(!isNew){

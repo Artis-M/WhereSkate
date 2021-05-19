@@ -59,7 +59,7 @@ public class MapViewModel extends ViewModel {
 
     public void updateMarkers(DataSnapshot snapshot){
         markerObjects.clear();
-        for (DataSnapshot data : snapshot.getChildren()){
+
             for (DataSnapshot parent : snapshot.getChildren()) {
                 String userid = parent.getKey();
                 DataSnapshot dataSnapshot = snapshot.child(userid);
@@ -67,7 +67,7 @@ public class MapViewModel extends ViewModel {
                     markerObjects.add(child.getValue(MarkerObject.class));
                 }
             }
-        }
+
         markersForView.postValue(markerObjects);
     }
 }

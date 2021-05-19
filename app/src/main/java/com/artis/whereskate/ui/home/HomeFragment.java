@@ -39,6 +39,9 @@ public class HomeFragment extends Fragment {
     private TextView username;
     private ImageView profilePic;
     private TextView markerCount;
+    private TextView latestName;
+    private ImageView latestImage;
+    private TextView latestDescription;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +53,10 @@ public class HomeFragment extends Fragment {
         username = root.findViewById(R.id.userNameHome);
         profilePic = root.findViewById(R.id.homeProfileImage);
         markerCount = root.findViewById(R.id.totalLocationsText);
+
+        latestDescription = root.findViewById(R.id.latestDescription);
+        latestName = root.findViewById(R.id.latestName);
+        latestImage = root.findViewById(R.id.latestLocationImage);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(root.getContext());
 
@@ -98,13 +105,23 @@ public class HomeFragment extends Fragment {
             public void onChanged(ArrayList<MarkerObject> markerObjects) {
                 if (isAll) {
                     MarkerListAdapter markerListAdapter = new MarkerListAdapter(homeViewModel.getAllMarkersForView().getValue(), account.getId());
-                    recyclerView.setAdapter(markerListAdapter);
+                    recyclerView.swapAdapter(markerListAdapter, true);
                 }
                 if (!isAll) {
                     MarkerListAdapter markerListAdapter = new MarkerListAdapter(homeViewModel.getMyMarkersForView().getValue(), account.getId());
-                    recyclerView.setAdapter(markerListAdapter);
+                    recyclerView.swapAdapter(markerListAdapter, true);
                 }
+
                 markerCount.setText("Total Locations Shared: " + homeViewModel.getMyMarkersForView().getValue().size());
+
+                if(homeViewModel.getMyMarkersForView().getValue().size() > 0){
+                    Glide.with(root.getContext()).load(homeViewModel.getMyMarkersForView().getValue().get(homeViewModel.getMyMarkersForView().getValue().size() -1).imageURL)
+                            .into(latestImage);
+                    latestName.setText(homeViewModel.getMyMarkersForView().getValue().get(homeViewModel.getMyMarkersForView().getValue().size() -1).name);
+                    latestDescription.setText(homeViewModel.getMyMarkersForView().getValue().get(homeViewModel.getMyMarkersForView().getValue().size() -1).description);
+
+                }
+
             }
         });
         return root;

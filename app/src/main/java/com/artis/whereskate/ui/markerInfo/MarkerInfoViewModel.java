@@ -16,8 +16,12 @@ public class MarkerInfoViewModel extends ViewModel {
     public MarkerInfoViewModel(){
         appRepository = new AppRepository();
     }
-    public void deleteMarker(String user, String marker, View view){
+    public void deleteMarker(String user, String marker, View view, boolean isHome){
         appRepository.deleteMarker(user, marker);
+        if(isHome){
+            Navigation.findNavController(view).navigate(R.id.action_nav_markerInfo_to_nav_home);
+            return;
+        }
         Navigation.findNavController(view).navigate(R.id.action_nav_markerInfo_to_nav_map);
     }
     public void editMarker(MarkerObject markerObject, View view, boolean isFromHome){

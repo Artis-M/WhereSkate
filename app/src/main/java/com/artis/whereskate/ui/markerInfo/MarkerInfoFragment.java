@@ -32,6 +32,7 @@ public class MarkerInfoFragment extends Fragment {
     private TextView description;
     private ImageView locationPhoto;
     private TextView username;
+
     private Button deleteButton;
     private Button editButton;
     private Button showOnMapButton;
@@ -55,6 +56,7 @@ public class MarkerInfoFragment extends Fragment {
         editButton = root.findViewById(R.id.markerInfoEdit);
         showOnMapButton = root.findViewById(R.id.showOnMapButton);
 
+
         name.setText(currentMarker.name);
         description.setText(currentMarker.description);
         username.setText("Location added by: " + currentMarker.userName);
@@ -69,7 +71,7 @@ public class MarkerInfoFragment extends Fragment {
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                markerInfoViewModel.deleteMarker(currentMarker.userId, currentMarker.markerId, root);
+                markerInfoViewModel.deleteMarker(currentMarker.userId, currentMarker.markerId, root, isFromHome);
                 }
             });
             editButton.setOnClickListener(new View.OnClickListener() {
