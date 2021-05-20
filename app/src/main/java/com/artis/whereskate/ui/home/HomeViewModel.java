@@ -2,11 +2,9 @@ package com.artis.whereskate.ui.home;
 
 import android.view.View;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.artis.whereskate.model.AppRepository;
 import com.artis.whereskate.model.MarkerObject;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,10 +18,8 @@ public class HomeViewModel extends ViewModel {
     private ArrayList<MarkerObject> markerObjectsAll;
     private MutableLiveData<ArrayList<MarkerObject>> myMarkersForView = new MutableLiveData<>();
     private MutableLiveData<ArrayList<MarkerObject>> allMarkersForView = new MutableLiveData<>();
-    private AppRepository appRepository;
 
     public HomeViewModel() {
-        appRepository = new AppRepository();
         markerObjects = new ArrayList<>();
         markerObjectsAll = new ArrayList<>();
     }
@@ -61,6 +57,5 @@ public class HomeViewModel extends ViewModel {
     public MutableLiveData<ArrayList<MarkerObject>> getAllMarkersForView() {
         return allMarkersForView;
     }
-
 
 }

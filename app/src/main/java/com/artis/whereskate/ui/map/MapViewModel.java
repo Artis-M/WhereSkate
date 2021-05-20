@@ -1,26 +1,18 @@
 package com.artis.whereskate.ui.map;
 
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
-import androidx.navigation.Navigation;
-
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.navigation.Navigation;
 
 import com.artis.whereskate.R;
 import com.artis.whereskate.model.AppRepository;
 import com.artis.whereskate.model.MarkerObject;
 import com.google.android.gms.maps.GoogleMap;
-
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -69,5 +61,6 @@ public class MapViewModel extends ViewModel {
             }
 
         markersForView.postValue(markerObjects);
+
     }
 }

@@ -5,13 +5,16 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
     </queries>
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -23,7 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhereSkate">
 
-        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.WhereSkate.NoActionBar"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -44,7 +49,6 @@
         </activity>
         <service
             android:name="MainActivity"
-            android:foregroundServiceType="location" >
-        </service>
+            android:foregroundServiceType="location"></service>
     </application>
 </manifest>

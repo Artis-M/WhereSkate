@@ -1,12 +1,10 @@
 package com.artis.whereskate.ui.home;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
@@ -14,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.artis.whereskate.R;
 import com.artis.whereskate.model.MarkerObject;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import java.util.ArrayList;
 
