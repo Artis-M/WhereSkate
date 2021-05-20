@@ -10,9 +10,9 @@ The main motivation for this app was my personal interest in inline skating and 
   
 **Must Have:**
 
-- [ ] As a user, I want to be able to add skating locations on a map.
-- [ ] As a user, I want to be able to see other user&#39;s added locations.
-- [ ] As a user, I want to be able to edit or delete my locations.
+- [] As a user, I want to be able to add skating locations on a map.
+- [] As a user, I want to be able to see other user&#39;s added locations.
+- [] As a user, I want to be able to edit or delete my locations.
 
 **Should have:**
 
