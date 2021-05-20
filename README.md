@@ -5,7 +5,7 @@ The main purpose of the app is to share location for skating. These locations ca
 The main motivation for this app was my personal interest in inline skating and that I used to share cool places to skate with my friends, that way we were able to find interesting locations that not a lot of people knew about. Therefore, having an app for that would help people find more locations to skate at.
 
 <details>
-<summary>REQUIREMENTS (Requirements with </summary>
+<summary>REQUIREMENTS (Checked requirements are implemented) </summary>
 <br>
   
 **Must Have:**
@@ -25,8 +25,8 @@ The main motivation for this app was my personal interest in inline skating and 
 **Could have:**
 
 - [x] As a user, I want to be able to add images and a video link for the locations.
-- [ ] As a user, I want to be able to set my profile picture, username, and other info.
-- [ ] As a user, I want to be able to see my profile statistics, such as average location rating.
+- [x] As a user, I want to be able to set my profile picture, username, and other info. (Partially)
+- [x] As a user, I want to be able to see my profile statistics, such as average location rating. (Partially)
 - [ ] As a user, I want to receive notification when a new location has been added in my local area.
 - [ ] As a user, I want to be able to comment on other user’s shared locations.
 
