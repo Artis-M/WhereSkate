@@ -1,5 +1,6 @@
 ## **WhereSkate** – Skating location sharing app.
 <img src="https://drive.google.com/uc?export=view&id=1YkobwARZrUaJE1xlqCP8ssGGRPQX3t6o" height="150">
+Link to video presentation - https://youtu.be/XZagjmKsJxk
 The main purpose of the app is to share location for skating. These locations can be skateparks, streets or even just cool places. Each location has its characteristics indicated, such as pavement type, quality, crowdedness, accessibility, etc. Images or a video link can be attached to better show the location and the user can set the suggested sport for the location (skateboarding, inline skating, rollerblades, scooters and so on). Other users then can rate these locations.
 
 The main motivation for this app was my personal interest in inline skating and that I used to share cool places to skate with my friends, that way we were able to find interesting locations that not a lot of people knew about. Therefore, having an app for that would help people find more locations to skate at.
