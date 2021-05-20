@@ -10,21 +10,21 @@ The main motivation for this app was my personal interest in inline skating and 
   
 **Must Have:**
 
-- [] As a user, I want to be able to add skating locations on a map.
-- [] As a user, I want to be able to see other user&#39;s added locations.
-- [] As a user, I want to be able to edit or delete my locations.
+- [x] As a user, I want to be able to add skating locations on a map.
+- [x] As a user, I want to be able to see other user&#39;s added locations.
+- [x] As a user, I want to be able to edit or delete my locations.
 
 **Should have:**
 
-- [ ] As a user, I want to be able to add characteristics to my locations.
+- [x] As a user, I want to be able to add characteristics to my locations.
 - [ ] As a user, I want to be able to rate other user&#39;s locations.
 - [ ] As a user, I want to be able to share a location on other apps.
-- [ ]	As a user, I want to be able to use google maps to navigate to the location.
+- [x]	As a user, I want to be able to use google maps to navigate to the location.
 - [ ] As a user, I want to be able to sort locations by type of sport and/or location type, user.
 
 **Could have:**
 
-- [ ] As a user, I want to be able to add images and a video link for the locations.
+- [x] As a user, I want to be able to add images and a video link for the locations.
 - [ ] As a user, I want to be able to set my profile picture, username, and other info.
 - [ ] As a user, I want to be able to see my profile statistics, such as average location rating.
 - [ ] As a user, I want to receive notification when a new location has been added in my local area.
