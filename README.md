@@ -35,3 +35,6 @@ The main motivation for this app was my personal interest in inline skating and 
 - [ ] As a user, I want to be able to create routes.
 - [ ] As a user, I want to be able to import locations from other apps.
 </details>
+
+  **Conclusion:**
+  In the end all of the must have requirements were implemented, and some "should have" and "could have". The main idea of sharing locations is implemented. Sadly rating other users was not implemented.
