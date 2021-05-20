@@ -28,6 +28,7 @@
 
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.WhereSkate.NoActionBar"></activity>
 
         <meta-data
@@ -40,6 +41,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/Theme.WhereSkate.NoActionBar">
             <intent-filter>
